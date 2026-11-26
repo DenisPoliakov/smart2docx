@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart2docx"
+version = "0.1.0"
+description = "Формирование текстовых документов DOCX по ГОСТ на основе smart-документов"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.6,<0.116",
+    "uvicorn>=0.34,<0.35",
+    "pydantic>=2.10,<3",
+    "python-docx>=1.1.2,<2",
+    "python-multipart>=0.0.20,<0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9",
+    "httpx>=0.28,<0.29",
+]
+
+[project.scripts]
+smart2docx = "smart2docx.main:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+smart2docx = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

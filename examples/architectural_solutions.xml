@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smartDocument documentType="explanatory_note">
+  <metadata>
+    <objectName>Здание дошкольного образовательного учреждения на 150 мест</objectName>
+    <objectCode>ДОУ-150-КН</objectCode>
+    <documentCipher>044-2026-ПЗ</documentCipher>
+    <projectStage>П</projectStage>
+    <address>г. Казань, Приволжский район, ул. Баки Урманче, земельный участок 16:50:011508:772</address>
+    <customer>МУП «Городские детские учреждения»</customer>
+    <designer>ООО «КазаньГражданПроект»</designer>
+    <chiefEngineer>Соколова Е.В.</chiefEngineer>
+    <year>2026</year>
+  </metadata>
+  <sections>
+    <section code="AR" title="Архитектурные решения">
+      <content>Здание запроектировано трёхэтажным, сложной формы в плане, с отдельными групповыми ячейками. Главный вход ориентирован на внутриквартальный проезд, хозяйственный вход отделён от путей движения детей.</content>
+      <parameters>
+        <parameter name="Этажность" value="3" unit="эт."/>
+        <parameter name="Вместимость" value="150" unit="мест"/>
+        <parameter name="Степень огнестойкости" value="II"/>
+        <parameter name="Класс функциональной пожарной опасности" value="Ф1.1"/>
+        <parameter name="Высота групповых помещений" value="3,3" unit="м"/>
+      </parameters>
+      <requirements>
+        <requirement code="СП 252.1325800.2016" source="СП 252.1325800.2016 «Здания дошкольных образовательных организаций»">
+          Состав и площади групповых ячеек приняты по нормам проектирования дошкольных организаций.
+        </requirement>
+        <requirement code="СП 118.13330.2022" source="СП 118.13330.2022 «Общественные здания и сооружения»">
+          Объёмно-планировочные решения обеспечивают эвакуацию и доступность для маломобильных групп населения.
+        </requirement>
+      </requirements>
+      <tables>
+        <table title="Экспликация основных помещений первого этажа">
+          <columns>
+            <column key="number" title="Номер"/>
+            <column key="name" title="Наименование"/>
+            <column key="area" title="Площадь, м2"/>
+          </columns>
+          <rows>
+            <row>
+              <cell key="number">101</cell>
+              <cell key="name">Групповая</cell>
+              <cell key="area">62,4</cell>
+            </row>
+            <row>
+              <cell key="number">102</cell>
+              <cell key="name">Спальня</cell>
+              <cell key="area">48,0</cell>
+            </row>
+            <row>
+              <cell key="number">103</cell>
+              <cell key="name">Раздевальная</cell>
+              <cell key="area">18,6</cell>
+            </row>
+            <row>
+              <cell key="number">110</cell>
+              <cell key="name">Пищеблок</cell>
+              <cell key="area">74,2</cell>
+            </row>
+          </rows>
+        </table>
+      </tables>
+      <subsections>
+        <section code="AR.1" title="Фасады и наружные стены">
+          <content>Наружные стены — ненесущая кладка с наружным утеплением и тонкослойной штукатуркой. Цветовое решение фасадов выполняется по паспорту колористики.</content>
+          <parameters>
+            <parameter name="Материал наружной стены" value="керамический камень с утеплением"/>
+            <parameter name="Толщина утеплителя" value="150" unit="мм"/>
+            <parameter name="Окна" value="ПВХ-профиль, двухкамерный стеклопакет"/>
+          </parameters>
+        </section>
+        <section code="AR.2" title="Отделка помещений">
+          <content>В групповых и спальнях предусматриваются покрытия, допускающие влажную уборку. Полы пищеблока выполняются из керамической плитки с уклоном к трапам.</content>
+          <parameters>
+            <parameter name="Полы групповых" value="линолеум коммерческий"/>
+            <parameter name="Стены пищеблока" value="керамическая плитка на высоту 1,8 м"/>
+          </parameters>
+        </section>
+      </subsections>
+    </section>
+  </sections>
+</smartDocument>
