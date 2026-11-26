@@ -66,6 +66,14 @@ def _child(element: ET.Element, name: str) -> ET.Element | None:
     return found[0] if found else None
 
 
+def _first_child(element: ET.Element, *names: str) -> ET.Element | None:
+    for name in names:
+        found = _child(element, name)
+        if found is not None:
+            return found
+    return None
+
+
 def _direct_text(element: ET.Element | None) -> str | None:
     if element is None or element.text is None:
         return None
@@ -99,7 +107,7 @@ def _optional_int(value: str | None, field: str) -> int | None:
 
 
 def _document_dict(root: ET.Element) -> dict[str, object]:
-    metadata = _child(root, "metadata") or _child(root, "meta")
+    metadata = _first_child(root, "metadata", "meta")
     if metadata is None:
         raise DocumentParseError("В XML отсутствует элемент metadata.")
     sections_node = _child(root, "sections")
@@ -146,7 +154,7 @@ def _section_dict(element: ET.Element) -> dict[str, object]:
 
 
 def _content_text(element: ET.Element) -> str | None:
-    node = _child(element, "content") or _child(element, "text")
+    node = _first_child(element, "content", "text")
     if node is None:
         return None
     chunks: list[str] = []

@@ -20,12 +20,15 @@ def parse_document(
     Формат берётся из `kind` (`json` или `xml`), иначе определяется
     по типу содержимого, имени файла и первому значащему символу.
     """
-    if isinstance(payload, bytes):
-        text = payload.decode("utf-8-sig")
-        raw: str | bytes = payload
-    else:
-        text = payload
-        raw = payload
+    try:
+        if isinstance(payload, bytes):
+            text = payload.decode("utf-8-sig")
+            raw: str | bytes = payload
+        else:
+            text = payload
+            raw = payload
+    except UnicodeDecodeError as exc:
+        raise DocumentParseError("Документ должен быть в кодировке UTF-8.") from exc
     detected = (kind or _detect(text, filename=filename, content_type=content_type)).lower()
     if detected == "json":
         return parse_json(text if isinstance(payload, str) else raw)
